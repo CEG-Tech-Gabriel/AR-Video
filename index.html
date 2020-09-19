@@ -35,8 +35,7 @@
         <a-assets>
             <img id="#play" src="play.png">
             <img id="#pause" src="pause.png">
-            <video id="video" autoplay="true" controls>
-                <source src="WhatsAppVideo.mp4" type="video/mp4">
+            <video id="video" autoplay="true" src="WhatsAppVideo.mp4" controls>
             </video>
         </a-assets>
 
@@ -45,7 +44,7 @@
             <a-video webkit-playsinline playsinline src="#video" width="3" height="1.5" position="0 0 0"
                 class="clickable" gesture-handler>
 
-                <a-image id="#videoControls" src="#play" position="0 -1 0" scale="1 1 1"></a-image>
+                <a-image id="#videoControls" src="#play" position="0 0 0" scale="1 1 1"></a-image>
             </a-video>
         </a-marker>
         <a-entity camera></a-entity>
