@@ -10,23 +10,46 @@
     <script src="gesture-detector.js"></script>
     <script src="gesture-handler.js"></script>
     <title>AR Video</title>
+
+    <script>
+        AFRAME.registerComponent('play-pause', {
+            init: function () {
+                var myVideo = document.querySelector('#video');
+                var videoControls = documents.querySelector('#videoControls');
+                this.el.addEventListener('click', function () {
+                    if (myVideo.paused) {
+                        myVideo.play();
+                        videoControls.setAttribute('src', '#pause');
+                    } else {
+                        myVideo.pause();
+                        videoControls.setAttribute('src', '#play');
+                    }
+                });
+            }
+        });
+    </script>
 </head>
 
 <body style="margin : 0px; overflow: hidden;">
     <a-scene vr-mode-ui="enabled: false" embedded arjs gesture-detector id="scene">
         <a-assets>
+            <img id="#play" src="play.png">
+            <img id="#pause" src="pause.png">
             <video id="video" autoplay="true" controls>
                 <source src="WhatsAppVideo.webm" type="video/webm">
                 <source src="WhatsAppVideo.mp4" type="video/mp4">
                 <source src="WhatsAppVideoConvert.mp4" type="video/mp4">
-                    <source src="stained_glass_window.mov" type="video/quicktime">
+                <source src="stained_glass_window.mov" type="video/quicktime">
             </video>
         </a-assets>
 
         <a-marker preset="hiro" emitevents="true">
             <!-- Using the asset management system. -->
             <a-video webkit-playsinline playsinline src="#video" width="3" height="1.5" position="0 0 0"
-                class="clickable" gesture-handler></a-video>
+                class="clickable" gesture-handler>
+
+                <a-image id="#videoControls" src="#play" position="0 -3 0" scale="0.5 0.5 1"></a-image>
+            </a-video>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
