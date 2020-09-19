@@ -7,18 +7,20 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>
     <title>AR Video</title>
 </head>
 
 <body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs>
+    <a-scene vr-mode-ui="enabled: false" embedded arjs gesture-detector id="scene">
         <a-assets>
             <video id="video" autoplay="true" src="WhatsAppVideo.mp4" controls></video>
         </a-assets>
 
-        <a-marker preset="hiro">
+        <a-marker preset="hiro" emitevents="true">
             <!-- Using the asset management system. -->
-            <a-video webkit-playsinline playsinline src="#video" width="3" height="1.5" position="0 0 0"></a-video>
+            <a-video webkit-playsinline playsinline src="#video" width="3" height="1.5" position="0 0 0" class="clickable" gesture-handler></a-video>
 
             <!--a-entity position="0 0 0" scale="0.05 0.05 0.05"
                 gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf">
