@@ -31,8 +31,8 @@
 </head>
 
 <body>
-    <a-scene vr-mode-ui = "enabled: false" color-space = "sRGB" renderer = "gammaOutput:true" embedded arjs gesture-detector
-        id="scene" embedded arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
+    <a-scene vr-mode-ui="enabled: false" color-space="sRGB" renderer="gammaOutput:true" gesture-detector id="scene"
+        embedded arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
         <!--a-assets>
             <img id="#play" src="play.png">
             <img id="#pause" src="pause.png">
@@ -40,10 +40,9 @@
             </video>
         </a-assets-->
 
-        <a-marker id = "marker_1" type = "pattern" emitevents = "true"
-            url = "resource/marker/pattern-Individual_Blocks-1.patt">
+        <a-marker id="marker_1" type="pattern" emitevents="true" url="resource/marker/pattern-Individual_Blocks-1.patt">
             <!-- Using the asset management system. -->
-            <a-box position = '0 0.5 0' color = "yellow"></a-box>
+            <a-box position='0 0.5 0' color="yellow"></a-box>
 
             <!--<a-video webkit-playsinline playsinline src="#video" width="3" height="1.5" position="0 0 0"
                 class="clickable" gesture-handler>
@@ -51,7 +50,7 @@
                 <a-image id="#videoControls" src="#play" position="0 0 0" scale="1 1 1"></a-image>
             </a-video>-->
         </a-marker>
-        <a-entity id = 'userCamera' camera>
+        <a-entity id='userCamera' camera>
             <a-cursor></a-cursor>
 
         </a-entity>
