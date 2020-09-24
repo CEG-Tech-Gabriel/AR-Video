@@ -31,7 +31,7 @@
 </head>
 
 <body style="margin : 0px; overflow: hidden;">
-    <a-scene vr-mode-ui="enabled: false" color-space = "sRGB" renderer="gammaOutput:true" embedded arjs gesture-detector id="scene" embedded arjs = 'debugUIEnabled: false; sourceType: webcam; patternRatio: 0.7; trackingMethod: best;'>
+    <a-scene vr-mode-ui="enabled: false" color-space = "sRGB" renderer="gammaOutput:true" embedded arjs gesture-detector id="scene" embedded arjs = 'debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
         <a-assets>
             <img id="#play" src="play.png">
             <img id="#pause" src="pause.png">
@@ -39,7 +39,7 @@
             </video>
         </a-assets>
 
-        <a-marker type="pattern" emitevents="true" url = "resource\marker\ceg_tech_marker.patt">
+        <a-marker type="pattern" emitevents="true" url = "resource\marker\pattern-Individual_Blocks-18.patt">
             <!-- Using the asset management system. -->
             <a-video webkit-playsinline playsinline src="#video" width="3" height="1.5" position="0 0 0"
                 class="clickable" gesture-handler>
