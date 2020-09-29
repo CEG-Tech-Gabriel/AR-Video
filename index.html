@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <!--meta name="viewport" content="width=device-width, initial-scale=1.0"-->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!---script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.0.4/aframe.min.js"
+        integrity="sha512-C5o7nqPhPwvfu3ZXTzTXJMyDMdxu65TtMd+GNHUrxtxhK9TdYS56W4QCtIIL+dvE9jXRsH3HmIkM0sfcfPyjug=="
+        crossorigin="anonymous"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="gesture-detector.js"></script>
     <script src="gesture-handler.js"></script>
     <title>AR Video</title>
 
-    <!--script>
+    <script>
         AFRAME.registerComponent('play-pause', {
             init: function () {
                 var myVideo = document.querySelector('#video');
@@ -27,32 +30,29 @@
                 });
             }
         });
-    </script-->
+    </script>
 </head>
 
 <body>
     <a-scene vr-mode-ui="enabled: false" color-space="sRGB" renderer="gammaOutput:true" gesture-detector id="scene"
         embedded arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.7; trackingMethod: best;'>
-        <!--a-assets>
-            <img id="#play" src="play.png">
-            <img id="#pause" src="pause.png">
-            <video id="video" autoplay="true" src="WhatsAppVideo.mp4" controls>
+        <a-assets>
+            <!-- Using the asset management system. -->
+            <img id="play" src="play.png">
+            <img id="pause" src="pause.png">
+            <video id="video" src="WhatsAppVideo.mp4" loop="true" controls>
             </video>
-        </a-assets-->
+        </a-assets>
 
         <a-marker id="marker_1" type="pattern" emitevents="true" url="resource\marker\pattern-8.patt">
-            <!-- Using the asset management system. -->
-            <a-box position='0 0.5 0' color="yellow"></a-box>
-
-            <!--<a-video webkit-playsinline playsinline src="#video" width="3" height="1.5" position="0 0 0"
+            <!--a-box position='0 0.5 0' color="yellow"></a-box-->
+            <a-video webkit-playsinline playsinline src="#video" width="3" height="1.5" position="0 0 0"
                 class="clickable" gesture-handler>
-
-                <a-image id="#videoControls" src="#play" position="0 0 0" scale="1 1 1"></a-image>
-            </a-video>-->
+                <a-image id="videoControls" src="#play" position="0 0 0" scale="1 1 1" play-pause></a-image>
+            </a-video>
         </a-marker>
         <a-entity id='userCamera' camera>
             <a-cursor></a-cursor>
-
         </a-entity>
     </a-scene>
 </body>
