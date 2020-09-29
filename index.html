@@ -16,7 +16,7 @@
         AFRAME.registerComponent('play-pause', {
             init: function () {
                 var myVideo = document.querySelector('#video');
-                var videoControls = documents.querySelector('#videoControls');
+                var videoControls = document.querySelector('#videoControls');
                 this.el.addEventListener('click', function () {
                     if (myVideo.paused) {
                         myVideo.play();
