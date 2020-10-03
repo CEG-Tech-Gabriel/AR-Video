@@ -17,7 +17,7 @@
             init: function () {
                 var myVideo = document.querySelector('#video');
                 var videoControls = document.querySelector('#videoControls');
-                this.el.addEventListener('touchend', function () {
+                this.el.addEventListener('click', function () {
                     if (myVideo.paused) {
                         myVideo.play();
                         videoControls.setAttribute('src', '#pause');
