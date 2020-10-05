@@ -17,7 +17,7 @@
             init: function () {
                 var myVideo = document.querySelector('#video');
                 var videoControls = document.querySelector('#videoControls');
-                videoControls.addEventListener('touchend', function () {
+                this.el.addEventListener('click', function () {
                     if (myVideo.paused) {
                         myVideo.play();
                         videoControls.setAttribute('src', '#pause');
@@ -25,7 +25,7 @@
                         myVideo.pause();
                         videoControls.setAttribute('src', '#play');
                     }
-                }, false);
+                });
             }
         });
 
