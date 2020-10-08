@@ -3,10 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <!--meta name="viewport" content="width=device-width, initial-scale=1.0"-->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.0.4/aframe.min.js"></script-->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="gesture-detector.js"></script>
     <script src="gesture-handler.js"></script>
@@ -17,7 +15,7 @@
             init: function () {
                 var myVideo = document.querySelector('#video');
                 var videoControls = document.querySelector('#videoControls');
-                this.el.addEventListener('click', function () {
+                this.el.addEventListener('click', () => {
                     if (myVideo.paused) {
                         myVideo.play();
                         videoControls.setAttribute('src', '#pause');
@@ -34,14 +32,10 @@
                 const marker = this.el;
                 var myVideo = document.querySelector('#video');
                 marker.addEventListener("markerFound", () => {
-                    var markerId = marker.id;
                     myVideo.play()
-                    //console.log('Marker Found: ', markerId);
                 });
                 marker.addEventListener("markerLost", () => {
-                    var markerId = marker.id;
                     myVideo.pause();
-                    //console.log('Marker Lost: ', markerId);
                 });
             }
         })
