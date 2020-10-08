@@ -52,7 +52,7 @@
             <video id="video" src="TesteVideoAR.mp4" loop="true" webkit-playsinline playsinline autoplay>
             </video>
 
-            <a-asset-item id="travesseiro" src="Travesseiro.gltf"></a-asset-item>
+            <a-asset-item id="logo" src="Logo_3D.gltf"></a-asset-item>
         </a-assets>
 
         <a-marker id="marker_1" type="pattern" emitevents="true" url="resource/marker/pattern-Individual_Blocks-18.patt"
@@ -63,7 +63,7 @@
                 <a-image id="videoControls" src="#play" position="0 1 0" scale="0.5 0.5 1" play-pause></a-image>
             </a-video-->
 
-            <a-entity gltf-model="#travesseiro" class="clickable" gesture-handler></a-entity>
+            <a-entity gltf-model="#logo" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <a-entity id='userCamera' camera>
             <a-cursor></a-cursor>
