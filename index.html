@@ -11,22 +11,6 @@
     <title>AR Video</title>
 
     <script>
-        AFRAME.registerComponent('play-pause', {
-            init: function () {
-                var myVideo = document.querySelector('#video');
-                var videoControls = document.querySelector('#videoControls');
-                this.el.addEventListener('click', () => {
-                    if (myVideo.paused) {
-                        myVideo.play();
-                        videoControls.setAttribute('src', '#pause');
-                    } else {
-                        myVideo.pause();
-                        videoControls.setAttribute('src', '#play');
-                    }
-                });
-            }
-        });
-
         AFRAME.registerComponent('registerevents', {
             init: function () {
                 const marker = this.el;
@@ -38,11 +22,51 @@
                     myVideo.pause();
                 });
             }
-        })
+        });
+
+        window.onload = () => {
+            var myVideo = document.querySelector('#video');
+            document.querySelector(".say-hi-button").addEventListener("click", () => {
+                // here you can change also a-scene or a-entity properties, like
+                // changing your 3D model source, size, position and so on
+                // or you can just open links, trigger actions...
+                if (myVideo.paused) {
+                    myVideo.play();
+                } else {
+                    myVideo.pause();
+                }
+            });
+        };
     </script>
+    <style>
+        .buttons {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .say-hi-button {
+            padding: 0.25em;
+            border-radius: 4px;
+            border: none;
+            background: white;
+            color: black;
+            width: 4em;
+            height: 2em;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="buttons">
+        <button class="say-hi-button">Play/Pause</button>
+    </div>
     <a-scene vr-mode-ui="enabled: false" color-space="sRGB" renderer="gammaOutput:true" gesture-detector id="scene"
         embedded arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
         <a-assets>
@@ -58,12 +82,11 @@
         <a-marker id="marker_1" type="pattern" emitevents="true" url="resource/marker/pattern-Individual_Blocks-18.patt"
             registerevents>
             <!--a-box position='0 0.5 0' color="yellow"></a-box-->
-            <!-- a-video src="#video" width="3" height="1.5" position="0 0 0" rotation="-90 0 0" class="clickable"
+            <a-video src="#video" width="3" height="1.5" position="0 0 0" rotation="-90 0 0" class="clickable"
                 gesture-handler>
-                <a-image id="videoControls" src="#play" position="0 1 0" scale="0.5 0.5 1" play-pause></a-image>
-            </a-video-->
+            </a-video>
 
-            <a-entity gltf-model="#logo" class="clickable" gesture-handler></a-entity>
+            <!--a-entity gltf-model="#logo" class="clickable" gesture-handler></a-entity-->
         </a-marker>
         <a-entity id='userCamera' camera>
             <a-cursor></a-cursor>
