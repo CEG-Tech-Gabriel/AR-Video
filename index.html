@@ -12,7 +12,7 @@
 
     <script>
         AFRAME.registerComponent('play-pause', {
-            init: () => {
+            init: function () {
                 var myVideo = document.querySelector('#video');
                 var videoControls = document.querySelector('#videoControls');
                 this.el.addEventListener('click', () => {
@@ -28,7 +28,7 @@
         });
 
         AFRAME.registerComponent('registerevents', {
-            init: () => {
+            init: function () {
                 const marker = this.el;
                 var myVideo = document.querySelector('#video');
                 marker.addEventListener("markerFound", () => {
