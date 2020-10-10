@@ -2,7 +2,7 @@ AFRAME.registerComponent('registerevents', {
     init: function () {
         const marker = this.el;
         var myVideo = document.querySelector('#video');
-        var buttons = document.getElementsByClassName('buttons');
+        var buttons = document.getElementsByClassName("buttons");
     
         marker.addEventListener("markerFound", () => {
             myVideo.play();
