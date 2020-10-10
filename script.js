@@ -2,11 +2,19 @@ AFRAME.registerComponent('registerevents', {
     init: function () {
         const marker = this.el;
         var myVideo = document.querySelector('#video');
+        var buttons = document.getElementsByClassName('buttons');
+    
         marker.addEventListener("markerFound", () => {
-            myVideo.play()
+            myVideo.play();
+            buttons.forEach(button => {
+                button.style.display = "block";
+            });
         });
         marker.addEventListener("markerLost", () => {
             myVideo.pause();
+            buttons.forEach(button => {
+                button.style.display = "none";
+            });
         });
     }
 });
