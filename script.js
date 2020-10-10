@@ -7,13 +7,13 @@ AFRAME.registerComponent('registerevents', {
         marker.addEventListener("markerFound", () => {
             myVideo.play();
             buttons.forEach(button => {
-                button.style.display = "block";
+                button.style.visibility = "visible";
             });
         });
         marker.addEventListener("markerLost", () => {
             myVideo.pause();
             buttons.forEach(button => {
-                button.style.display = "none";
+                button.style.visibility = "hidden";
             });
         });
     }
