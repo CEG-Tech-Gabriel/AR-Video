@@ -3,18 +3,18 @@ AFRAME.registerComponent('registerevents', {
         const marker = this.el;
         var myVideo = document.querySelector('#video');
         var buttons = document.getElementsByClassName("buttons");
-    
+
         marker.addEventListener("markerFound", () => {
             myVideo.play();
-            buttons.forEach(button => {
-                button.style.visibility = "visible";
-            });
+            for (let btn of buttons) {
+                btn.style.visibility = "visible";
+            };
         });
         marker.addEventListener("markerLost", () => {
             myVideo.pause();
-            buttons.forEach(button => {
-                button.style.visibility = "hidden";
-            });
+            for (let btn of buttons) {
+                btn.style.visibility = "hidden";
+            };
         });
     }
 });
