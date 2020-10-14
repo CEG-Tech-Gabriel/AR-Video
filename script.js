@@ -6,7 +6,7 @@ AFRAME.registerComponent('registerevents', {
         var cursor = document.querySelector("#cursor")
 
         marker.addEventListener("markerFound", () => {
-            cursor.style.visibility = "hidden";
+            cursor.visible = false;
             myVideo.play();
             for (let btn of buttons) {
                 btn.style.visibility = "visible";
@@ -14,7 +14,7 @@ AFRAME.registerComponent('registerevents', {
         });
         marker.addEventListener("markerLost", () => {
             myVideo.pause();
-            cursor.style.visibility = "visible";
+            cursor.visible = true;
             for (let btn of buttons) {
                 btn.style.visibility = "hidden";
             };
