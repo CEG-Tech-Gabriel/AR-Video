@@ -3,7 +3,7 @@ AFRAME.registerComponent('registerevents', {
         const marker = this.el;
         var myVideo = document.querySelector('#video');
         var buttons = document.getElementsByClassName("buttons");
-        var cursor = document.getElementById("#cursor")
+        var cursor = document.querySelector("#cursor")
 
         marker.addEventListener("markerFound", () => {
             cursor.style.visibility = "hidden";
