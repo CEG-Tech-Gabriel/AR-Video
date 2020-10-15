@@ -34,7 +34,7 @@ window.onload = () => {
 
     });
     document.getElementById("btn2").addEventListener("click", () => {
-        model.setAttribute("gltf-model", "predio2.fbx");
+        model.setAttribute("gltf-model", "predio2.gltf");
     });
     
     /*document.querySelector(".say-hi-button").addEventListener("click", () => {
