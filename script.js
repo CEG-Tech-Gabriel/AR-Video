@@ -30,11 +30,11 @@ window.onload = () => {
     var model = document.querySelector("#model");
     
     document.getElementById("btn1").addEventListener("click", () => {
-        model.setAttribute("gltf-model", "url(Logo_3D_5.gltf)");
+        model.setAttribute("gltf-model", "Logo_3D_5.gltf");
 
     });
     document.getElementById("btn2").addEventListener("click", () => {
-        model.setAttribute("gltf-model", "url(Bee.glb)");
+        model.setAttribute("gltf-model", "Bee.glb");
     });
     
     /*document.querySelector(".say-hi-button").addEventListener("click", () => {
