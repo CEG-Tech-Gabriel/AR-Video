@@ -29,11 +29,11 @@ window.onload = () => {
 
     var asset = document.querySelector("#logo");
     
-    document.getElementById("#btn1").addEventListener("click", () => {
+    document.getElementById("btn1").addEventListener("click", () => {
         asset.setAttribute("src", "Logo_3D_5.gltf");
 
     });
-    document.getElementById("#btn2").addEventListener("click", () => {
+    document.getElementById("btn2").addEventListener("click", () => {
         asset.setAttribute("src", "Bee.glb");
     });
     
