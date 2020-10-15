@@ -6,8 +6,8 @@ AFRAME.registerComponent('registerevents', {
         var cursor = document.querySelector("a-cursor")
 
         marker.addEventListener("markerFound", () => {
-            //cursor.visible = false;
-            cursor.setAttribute("visible", "false")
+            cursor.object3D.visible = false;// update visibility at the three.js level 
+            //cursor.setAttribute("visible", "false")
             myVideo.play();
             for (let btn of buttons) {
                 btn.style.visibility = "visible";
@@ -15,8 +15,8 @@ AFRAME.registerComponent('registerevents', {
         });
         marker.addEventListener("markerLost", () => {
             myVideo.pause();
-            //cursor.visible = true;
-            cursor.setAttribute("visible", "true")
+            cursor.object3D.visible = true;// update visibility at the three.js level 
+            //cursor.setAttribute("visible", "true")
             for (let btn of buttons) {
                 btn.style.visibility = "hidden";
             };
