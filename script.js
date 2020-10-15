@@ -26,7 +26,18 @@ AFRAME.registerComponent('registerevents', {
 
 window.onload = () => {
     var myVideo = document.querySelector('#video');
-    document.querySelector(".say-hi-button").addEventListener("click", () => {
+
+    var asset = document.querySelector("#logo");
+    
+    document.getElementById("#btn1").addEventListener("click", () => {
+        asset.setAttribute("src", "Logo_3D_5.gltf");
+
+    });
+    document.getElementById("#btn2").addEventListener("click", () => {
+        asset.setAttribute("src", "Bee.glb");
+    });
+    
+    /*document.querySelector(".say-hi-button").addEventListener("click", () => {
         // here you can change also a-scene or a-entity properties, like
         // changing your 3D model source, size, position and so on
         // or you can just open links, trigger actions...
@@ -35,5 +46,5 @@ window.onload = () => {
         } else {
             myVideo.pause();
         }
-    });
+    });*/
 };
