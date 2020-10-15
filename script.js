@@ -27,14 +27,14 @@ AFRAME.registerComponent('registerevents', {
 window.onload = () => {
     var myVideo = document.querySelector('#video');
 
-    var asset = document.querySelector("#logo");
+    var model = document.querySelector("#model");
     
     document.getElementById("btn1").addEventListener("click", () => {
-        asset.setAttribute("src", "Logo_3D_5.gltf");
+        model.setAttribute("gltf-model", "url(Logo_3D_5.gltf)");
 
     });
     document.getElementById("btn2").addEventListener("click", () => {
-        asset.setAttribute("src", "Bee.glb");
+        model.setAttribute("gltf-model", "url(Bee.glb)");
     });
     
     /*document.querySelector(".say-hi-button").addEventListener("click", () => {

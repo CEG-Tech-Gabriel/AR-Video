@@ -18,7 +18,7 @@
         <button id="btn1" class="say-hi-button">Exemplo 1</button>
         <button id="btn2" class="say-hi-button">Exemplo 2</button>
     </div>
-    
+
     <a-scene vr-mode-ui="enabled: false" color-space="sRGB" renderer="gammaOutput:true" gesture-detector id="scene"
         embedded arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
         <a-assets>
@@ -28,7 +28,8 @@
             <video id="video" src="TesteVideoAR.mp4" loop="true" webkit-playsinline playsinline autoplay>
             </video>
 
-            <a-asset-item id="logo" src="Bee.glb"></a-asset-item>
+            <a-asset-item id="logo" src="Logo_3D_5.gltf"></a-asset-item>
+            <a-asset-item id="bee" src="Bee.glb"></a-asset-item>
         </a-assets>
 
         <a-marker id="marker_1" type="pattern" emitevents="true" url="resource/marker/pattern-Individual_Blocks-18.patt"
@@ -38,7 +39,7 @@
                 gesture-handler>
             </a-video-->
 
-            <a-entity gltf-model="#logo" class="clickable" gesture-handler></a-entity>
+            <a-entity id="model" gltf-model="#logo" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <a-entity id='userCamera' camera>
             <a-cursor id="cursor" visible="true"></a-cursor>
